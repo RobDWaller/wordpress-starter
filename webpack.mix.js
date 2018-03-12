@@ -16,8 +16,8 @@ const SvgStore = require('webpack-svgstore-plugin');
 const host = '192.168.33.10';
 
 // Assets Path
-const jsSrcPath = 'src/js/app.js';
-const scssSrcPath = 'src/scss/style.scss';
+const jsSrcPath = 'src/Assets/js/app.js';
+const scssSrcPath = 'src/Assets/scss/style.scss';
 const themePath = 'public/wp-content/themes/project-theme';
 const destPath = `${themePath}/assets/build`;
 

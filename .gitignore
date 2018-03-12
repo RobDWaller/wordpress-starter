@@ -32,3 +32,4 @@ __MACOSX/
 *.sql
 *.zip
 Vagrantfile
+yarn-error.log

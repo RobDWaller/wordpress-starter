@@ -12,8 +12,8 @@
 
 use Config\Config;
 use Exception\AcfException;
-use WordPressHelpers\Acf;
-use WordPressHelpers\Filter;
+use Helper\Acf;
+use Helper\Filter;
 
 class AcfConfig
 {

@@ -1,7 +1,16 @@
 <?php
 
-$respository = Config\Config::getInstance();
+try {
+    $respository = Config\Config::getInstance();
 
-foreach ($respository->get('mu-plugins') as $plugin){
-    require_once __DIR__ . '/' . $plugin;
+    $plugins = $respository->get('mu-plugins');
+
+    if (count($plugins) >= 0) {
+        foreach ($plugins as $plugin){
+            require_once __DIR__ . '/' . $plugin;
+        }
+    }
+} catch (\Error $e) {
+    echo $e->getMessage();
+    die();
 }

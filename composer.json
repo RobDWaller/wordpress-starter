@@ -17,9 +17,8 @@
         "johnpbloch/wordpress": "4.9.4",
         "wpackagist-plugin/wordpress-seo": "7.0.*",
         "vlucas/phpdotenv": "2.3.*",
-        "illuminate/config": "5.2.*",
-        "illuminate/filesystem": "5.2.*",
-        "illuminate/database": "5.2.*"
+        "illuminate/config": "5.6.*",
+        "illuminate/filesystem": "5.6.*"
     },
     "require-dev": {
         "phpunit/phpunit": "4.8.*",
@@ -37,10 +36,11 @@
     },
     "autoload": {
         "psr-4": {
-            "Config\\": "config/",
-            "App\\": "app/",
-            "Exception\\": "exception/",
-            "Theme\\Bootstrap\\": "bootstrap/"
+            "Config\\": "src/Config/",
+            "App\\": "src/App/",
+            "Exception\\": "src/Exception/",
+            "Theme\\Bootstrap\\": "src/Bootstrap/",
+            "Helper\\": "src/Helper/"
         }
     }
 }

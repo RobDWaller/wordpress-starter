@@ -1,4 +1,6 @@
-<?php namespace Config;
+<?php
+
+namespace Config;
 
 use Illuminate\Config\Repository;
 use Illuminate\Filesystem\Filesystem;
@@ -13,7 +15,7 @@ class Config
     public static function getInstance()
     {
         if (null === static::$instance) {
-            static::$instance = new Config(new \Illuminate\Filesystem\Filesystem);
+            static::$instance = new Config(new Filesystem);
         }
 
         return static::$repository;
@@ -34,7 +36,6 @@ class Config
     private function getConfigFileArrays()
     {
         $files = $this->fileSystem->files(__DIR__);
-
         return count($files) > 0 ? $this->getArraysFromFiles($files) : [] ;
     }
 
@@ -43,10 +44,10 @@ class Config
         $result = [];
         foreach ($files as $file){
             if (!strpos($file, 'Config.php')){
-	             $result[$this->fileSystem->name($file)] = require_once $file;
+                 $result[$this->fileSystem->name($file)] = require_once $file;
             }
         }
-
+        
         return $result;
     }
 }
