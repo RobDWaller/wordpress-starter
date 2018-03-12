@@ -1,0 +1,74 @@
+.c-hamburger {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: $hamburger-background-color;
+    border: 0;
+    border-radius: none;
+    box-shadow: none;
+    cursor: pointer;
+    display: block;
+    font-size: 0;
+    height: $hamburger-height;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    position: relative;
+    text-indent: -9999px;
+    transition: background $hamburger-transistion-duration;
+    width: $hamburger-width;
+
+    &__bar {
+        background: $hamburger-color;
+        display: block;
+        height: $hamburger-bar-thickness;
+        left: $hamburger-pad;
+        position: absolute;
+        right: $hamburger-pad;
+        top: ($hamburger-height / 2) - ($hamburger-bar-thickness / 2);
+        transition: background 0s $hamburger-transistion-duration;
+
+        &::after,
+        &::before {
+            background: $hamburger-color;
+            content: '';
+            display: block;
+            height: $hamburger-bar-thickness;
+            left: 0;
+            position: absolute;
+            width: 100%;
+        }
+
+        &::before {
+            top: -$hamburger-bar-thickness - $hamburger-bar-space;
+            transition: top $hamburger-transistion-duration $hamburger-transistion-duration, transform $hamburger-transistion-duration 0s;
+        }
+
+        &::after {
+            bottom: -$hamburger-bar-thickness - $hamburger-bar-space;
+            transition: bottom $hamburger-transistion-duration $hamburger-transistion-duration, transform $hamburger-transistion-duration 0s;
+        }
+    }
+
+    .body--menu-is-expanded & {
+        .c-hamburger__bar {
+            background: none;
+
+            &::before {
+                top: 0;
+                transform: rotate(45deg);
+                transition: top $hamburger-transistion-duration 0s, transform $hamburger-transistion-duration $hamburger-transistion-duration;
+            }
+
+            &::after {
+                bottom: 0;
+                transform: rotate(-45deg);
+                transition: bottom $hamburger-transistion-duration 0s, transform $hamburger-transistion-duration $hamburger-transistion-duration;
+            }
+        }
+    }
+
+    &:focus {
+        outline: none;
+    }
+}

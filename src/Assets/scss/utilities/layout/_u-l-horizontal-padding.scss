@@ -1,0 +1,14 @@
+.u-l-horizontal-padding {
+    padding-left: $horizontal-padding-small;
+    padding-right: $horizontal-padding-small;
+
+    @include breakpoint($medium) {
+        padding-left: $horizontal-padding-medium;
+        padding-right: $horizontal-padding-medium;
+    }
+
+    @include breakpoint($limit-width) {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}

@@ -1,0 +1,20 @@
+.u-button {
+    cursor: pointer;
+    user-select: none;
+
+    &:hover {
+        
+    }
+
+    &:focus {
+        outline: 0;
+    }
+
+    &--disabled {
+        cursor: not-allowed;
+
+        &:hover {
+            cursor: not-allowed;
+        }
+    }
+}

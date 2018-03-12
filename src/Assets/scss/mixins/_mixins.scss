@@ -1,0 +1,29 @@
+// Mixin for creating media queries
+@mixin breakpoint($min-width: null, $min-height: null, $medium: screen) {
+    @if ($min-width != null and $min-height != null) {
+        @media #{$medium} and (min-width: $min-width) and (min-height: $min-height) {
+            @content
+        }
+    } @else if ($min-width != null and $min-height == null) {
+        @media #{$medium} and (min-width: $min-width) {
+            @content
+        }
+    } @else if ($min-width == null and $min-height != null) {
+        @media #{$medium} and (min-height: $min-height) {
+            @content
+        }
+    }
+}
+
+// Breakpoint-loop
+// @include breakpoint-loop(width, (($medium, 80%), ($large, 50%)));
+@mixin breakpoint-loop($element, $properties) {
+    @each $property in $properties {
+        $size: nth($property, 1);
+        $value: nth($property, 2);
+
+        @include breakpoint($size) {
+            #{$element}: $value;
+        }
+    }
+}

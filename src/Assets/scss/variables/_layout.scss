@@ -1,0 +1,15 @@
+// Grid
+$max-width: 1400px;
+$max-width-narrow: 720px;
+
+// Lost Grid Configurations
+@lost gutter 3rem;
+@lost flexbox flex;
+@lost rounder 99.9999;
+
+// Spacing
+$horizontal-padding-small: 30px;
+$horizontal-padding-medium: 60px;
+
+// Containers
+$limit-width: $max-width + ($horizontal-padding-medium * 2);

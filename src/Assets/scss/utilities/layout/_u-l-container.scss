@@ -1,0 +1,10 @@
+.u-l-container {
+    margin: auto;
+    max-width: $max-width;
+    width: 100%;
+
+    &--narrow {
+        margin: auto;
+        max-width: $max-width-narrow;
+    }
+}

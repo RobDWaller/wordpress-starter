@@ -1,0 +1,73 @@
+# https://github.com/brigade/scss-lint/blob/master/lib/scss_lint/linter/README.md#bangformat
+linters:
+  BemDepth:
+    enabled: true
+    max_elements: 1
+
+  ChainedClasses:
+    enabled: false
+
+  Comment:
+    enabled: false
+    style: silent
+
+  DeclarationOrder:
+    enabled: false
+
+  HexNotation:
+    enabled: false
+
+  Indentation:
+    enabled: true
+    allow_non_nested_indentation: false
+    character: space
+    width: 4
+
+  ImportantRule:
+    enabled: false
+
+  NestingDepth:
+    enabled: enable
+    max_depth: 2
+    ignore_parent_selectors: true
+
+  PropertySpelling:
+    extra_properties:
+      - lost-utility
+      - lost-flex-container
+      - lost-center
+      - lost-align
+      - lost-column
+      - lost-row
+      - lost-waffle
+      - lost-offset
+      - lost-move
+      - lost-masonry-wrap
+      - lost-masonry-column
+
+    disabled_properties:
+
+  PlaceholderInExtend:
+      enabled: false
+
+  PropertySortOrder:
+    enabled: true
+    ignore_unspecified: false
+    min_properties: 2
+    separate_groups: false
+
+  VendorPrefix:
+    enabled: true
+    identifier_list: base
+    additional_identifiers: []
+    excluded_identifiers: []
+
+  QualifyingElement:
+    enabled: false
+    allow_element_with_attribute: false
+    allow_element_with_class: false
+    allow_element_with_id: false
+
+  SelectorFormat:
+    enabled: false
+    convention: hyphenated_lowercase

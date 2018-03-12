@@ -1,0 +1,72 @@
+// scss-lint:disable VendorPrefix
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+    height: 100%;
+    min-height: 100%;
+    overflow-y: scroll;
+    -webkit-text-size-adjust: 100%;
+    /* Prevent font scaling in iOS landscape */
+}
+
+body {
+    color: $primary-font-color;
+    font-family: $primary-font;
+    font-size: 1.6rem;
+    -moz-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    font-weight: $primary-font-weight;
+    line-height: 1.4;
+    text-rendering: optimizeLegibility;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: inherit;
+}
+
+* {
+    ::selection {
+        background: $primary-font-color;
+        color: $white;
+        text-shadow: none;
+    }
+}
+
+strong {
+    font-weight: bold;
+}
+
+em {
+    font-style: italic;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+figure,
+blockquote {
+    margin: 0;
+}
+
+blockquote {
+    .quote {
+        quotes: '“' '”' '‘' '’';
+
+        &::before {
+            content: open-quote;
+        }
+
+        &::after {
+            content: close-quote;
+        }
+    }
+}
