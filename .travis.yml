@@ -10,7 +10,7 @@ before_script:
     - travis_retry composer install --no-interaction --prefer-source --dev
 
 script:
-    - vendor/bin/phpstan analyse src/App src/Bootstrap src/Config src/Exception src/Helper --level 7
+    - vendor/bin/phpstan analyse -l 7 -c phpstan.neon src/App src/Bootstrap src/Config src/Exception src/Helper
     #- vendor/bin/phpunit --coverage-clover=coverage.xml
 
 after_success:
