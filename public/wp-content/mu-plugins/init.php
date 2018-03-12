@@ -6,7 +6,7 @@ try {
     $plugins = $respository->get('mu-plugins');
 
     if (count($plugins) >= 0) {
-        foreach ($plugins as $plugin){
+        foreach ($plugins as $plugin) {
             require_once __DIR__ . '/' . $plugin;
         }
     }

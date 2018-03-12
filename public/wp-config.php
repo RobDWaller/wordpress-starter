@@ -62,14 +62,14 @@ define('DB_COLLATE', getenv("DB_COLLATE"));
  *
  * @since 2.6.0
  */
-define('AUTH_KEY',         getenv("AUTH_KEY"));
-define('SECURE_AUTH_KEY',  getenv("SECURE_AUTH_KEY"));
-define('LOGGED_IN_KEY',    getenv("LOGGED_IN_KEY"));
-define('NONCE_KEY',        getenv("NONCE_KEY"));
-define('AUTH_SALT',        getenv("AUTH_SALT"));
+define('AUTH_KEY', getenv("AUTH_KEY"));
+define('SECURE_AUTH_KEY', getenv("SECURE_AUTH_KEY"));
+define('LOGGED_IN_KEY', getenv("LOGGED_IN_KEY"));
+define('NONCE_KEY', getenv("NONCE_KEY"));
+define('AUTH_SALT', getenv("AUTH_SALT"));
 define('SECURE_AUTH_SALT', getenv("SECURE_AUTH_SALT"));
-define('LOGGED_IN_SALT',   getenv("LOGGED_IN_SALT"));
-define('NONCE_SALT',       getenv("NONCE_SALT"));
+define('LOGGED_IN_SALT', getenv("LOGGED_IN_SALT"));
+define('NONCE_SALT', getenv("NONCE_SALT"));
 
 /**
  * Define the wordpress Environment variable
@@ -98,7 +98,7 @@ $table_prefix  = getenv("DB_PREFIX");
  * @link https://codex.wordpress.org/Debugging_in_WordPress
  */
 define('WP_DEBUG', getenv("WP_DEBUG"));
-define('WP_DEBUG_LOG', getenv("WP_DEBUG_LOG") );
+define('WP_DEBUG_LOG', getenv("WP_DEBUG_LOG"));
 
 /**
  * Custom Settings
@@ -107,8 +107,8 @@ define('AUTOMATIC_UPDATER_DISABLED', true);
 define('DISABLE_WP_CRON', true);
 define('DISALLOW_FILE_EDIT', true);
 
-define('WP_HOME','http' . (getenv("SSL") === 'true' ? 's' : '') . '://' .  $_SERVER['HTTP_HOST']);
-define('WP_SITEURL','http' . (getenv("SSL") === 'true' ? 's' : '') . '://' . $_SERVER['HTTP_HOST'] . '/wordpress');
+define('WP_HOME', 'http' . (getenv("SSL") === 'true' ? 's' : '') . '://' .  $_SERVER['HTTP_HOST']);
+define('WP_SITEURL', 'http' . (getenv("SSL") === 'true' ? 's' : '') . '://' . $_SERVER['HTTP_HOST'] . '/wordpress');
 
 define('CONTENT_DIR', '/wp-content');
 define('WP_CONTENT_DIR', __DIR__ . CONTENT_DIR);
@@ -117,8 +117,9 @@ define('WP_CONTENT_URL', WP_HOME . CONTENT_DIR);
 /* That's all, stop editing! Happy blogging. */
 
 /** Absolute path to the WordPress directory. */
-if ( !defined('ABSPATH') )
-	define('ABSPATH', dirname(__FILE__) . '/wordpress/');
+if (!defined('ABSPATH')) {
+    define('ABSPATH', dirname(__FILE__) . '/wordpress/');
+}
 
 /** Sets up WordPress vars and included files. */
 require_once(ABSPATH . 'wp-settings.php');

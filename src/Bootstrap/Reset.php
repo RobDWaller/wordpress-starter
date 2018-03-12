@@ -53,18 +53,20 @@ class Reset
         });
 
         // Remove Wordpress version number from scripts and css
-        add_filter( 'style_loader_src', function ($src) {
+        add_filter('style_loader_src', function ($src) {
             return self::removeWpVersionNo($src);
         }, 9999);
 
-        add_filter( 'script_loader_src', function ($src) {
+        add_filter('script_loader_src', function ($src) {
             return self::removeWpVersionNo($src);
         }, 9999);
     }
 
-    public static function removeWpVersionNo( $src ) {
-        if ( strpos( $src, 'ver=' . get_bloginfo( 'version' ) ) )
-        $src = remove_query_arg( 'ver', $src );
+    public static function removeWpVersionNo($src)
+    {
+        if (strpos($src, 'ver=' . get_bloginfo('version'))) {
+            $src = remove_query_arg('ver', $src);
+        }
         return $src;
     }
 }

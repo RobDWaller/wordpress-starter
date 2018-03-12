@@ -42,9 +42,9 @@ class Config
     private function getArraysFromFiles(array $files)
     {
         $result = [];
-        foreach ($files as $file){
-            if (!strpos($file, 'Config.php')){
-                 $result[$this->fileSystem->name($file)] = require_once $file;
+        foreach ($files as $file) {
+            if (!strpos($file, 'Config.php')) {
+                $result[$this->fileSystem->name($file)] = require_once $file;
             }
         }
         

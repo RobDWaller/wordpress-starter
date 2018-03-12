@@ -1,6 +1,7 @@
 <?php
-	use Theme\Bootstrap\Helpers;
-	use Theme\Bootstrap\Render;
+    use Theme\Bootstrap\Helpers;
+use Theme\Bootstrap\Render;
+
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
@@ -20,7 +21,7 @@
 				<div class="l-header">
 					<div class="l-header__bar">
 						<div class="l-header__logo">
-							<?php // .c-logo goes here ?>
+							<?php // .c-logo goes here?>
 						</div>
 					</div>
 					<div class="l-header__menu-trigger">
