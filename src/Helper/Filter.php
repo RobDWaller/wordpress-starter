@@ -10,12 +10,12 @@ namespace Helper;
 
 trait Filter
 {
-	/**
-	 * Add a WordPress filter
-	 */
+    /**
+     * Add a WordPress filter
+     */
 
-	public function addFilter($filter, $method)
-	{
-		add_filter($filter, $method);
-	}
+    public function addFilter($filter, $method)
+    {
+        add_filter($filter, $method);
+    }
 }

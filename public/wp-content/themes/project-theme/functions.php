@@ -1,13 +1,13 @@
 <?php
     use Theme\Bootstrap\CustomPostType;
-    use Theme\Bootstrap\CustomTaxonomy;
-    use Theme\Bootstrap\Enqueues;
-    use Theme\Bootstrap\Reset;
-    use Theme\Bootstrap\DisableComments;
-    use Theme\Bootstrap\Utilities;
-    use Theme\Bootstrap\ProjectConfig;
+use Theme\Bootstrap\CustomTaxonomy;
+use Theme\Bootstrap\Enqueues;
+use Theme\Bootstrap\Reset;
+use Theme\Bootstrap\DisableComments;
+use Theme\Bootstrap\Utilities;
+use Theme\Bootstrap\ProjectConfig;
 
-    //Reset Wordpress (removes redundant scripts etc.)
+//Reset Wordpress (removes redundant scripts etc.)
     add_action('init', 'resetWordpressDefaults');
     function resetWordpressDefaults()
     {

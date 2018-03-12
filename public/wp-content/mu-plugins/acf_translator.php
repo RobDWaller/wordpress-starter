@@ -7,9 +7,9 @@
 
 function checkForAcf()
 {
-	$acfConfig = new App\AcfConfig();
+    $acfConfig = new App\AcfConfig();
 
-	$acfConfig->make();
+    $acfConfig->make();
 }
 
 add_action('wp_loaded', 'checkForAcf');
@@ -20,9 +20,9 @@ add_action('wp_loaded', 'checkForAcf');
 
 function removeAcfFromMenu()
 {
-	$acfConfig = new App\AcfConfig();
+    $acfConfig = new App\AcfConfig();
 
-	$acfConfig->removeMenuItem();
+    $acfConfig->removeMenuItem();
 }
 
 add_action('admin_menu', 'removeAcfFromMenu');

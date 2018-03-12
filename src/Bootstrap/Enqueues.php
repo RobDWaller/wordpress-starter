@@ -13,7 +13,8 @@ class Enqueues
     private $manifestContent;
     private $codeSplit;
 
-    public function __construct() {
+    public function __construct()
+    {
         $this->manifestContent = json_decode(file_get_contents('../public/mix-manifest.json'), true);
         $this->buildPath = '/wp-content/themes/project-theme/assets/build/';
 
@@ -41,7 +42,7 @@ class Enqueues
         if (array_key_exists($vendorKey, $this->manifestContent)) {
             $this->codeSplit = [
                 'vendor' => str_replace($this->buildPath, '', $this->manifestContent[$vendorKey]),
-                'manifest' => str_replace($this->buildPath, '',  $this->manifestContent[$manifestKey])
+                'manifest' => str_replace($this->buildPath, '', $this->manifestContent[$manifestKey])
             ];
         }
     }

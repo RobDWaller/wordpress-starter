@@ -9,11 +9,11 @@ namespace Helper;
 **/
 trait Acf
 {
-	/**
-	 * Add a ACF custom field group to a relevant post or page
-	 */
-	public function acfAddLocalFieldGroup(array $data)
-	{
-		acf_add_local_field_group($data);
-	}
+    /**
+     * Add a ACF custom field group to a relevant post or page
+     */
+    public function acfAddLocalFieldGroup(array $data)
+    {
+        acf_add_local_field_group($data);
+    }
 }
