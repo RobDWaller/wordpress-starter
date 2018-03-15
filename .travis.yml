@@ -16,6 +16,10 @@ php:
 # Install Java
 jdk: oraclejdk8
 
+# Install
+services:
+    - mysql
+
 # Install Selnium and the Selenium Chrome Driver and start Selenium
 install:
     # Make Selenium directory
@@ -42,6 +46,11 @@ before_script:
     - sleep 3
     # Move out of public directory so Behat can be executed
     - cd ../
+    # Set up MySQL
+    - mysql
+    - create database test
+    - exit
+    # Create .env
 
 script:
     - vendor/bin/phpstan analyse -l 7 -c phpstan.neon src/App src/Bootstrap src/Config src/Exception src/Helper

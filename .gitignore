@@ -33,3 +33,4 @@ __MACOSX/
 *.zip
 Vagrantfile
 yarn-error.log
+composer.lock
