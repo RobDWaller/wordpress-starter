@@ -3,12 +3,12 @@ default:
         Behat\MinkExtension:
             # You will have to chage the base url dependent on your environment setup
             base_url: http://127.0.0.1:8000
+            #base_url: http://192.168.33.10
             javascript_session: selenium2
             browser_name: 'chrome'
             selenium2:
-                capabilities: { "browserName": "chrome", "browser": "chrome", "version": "62", 'chrome': {'switches':['--no-sandbox', '--headless']}}
+                capabilities: { "browserName": "chrome", "browser": "chrome", "version": "65", 'chrome': {'switches':['--no-sandbox', '--headless']}}
     suites:
         default:
             contexts:
-                - FeatureContext
                 - Behat\MinkExtension\Context\MinkContext

@@ -25,15 +25,15 @@ install:
     # Make Selenium directory
     - sudo mkdir /usr/local/share/selenium
     # Download Selenium to Selenium directory
-    - sudo wget http://selenium-release.storage.googleapis.com/3.7/selenium-server-standalone-3.7.1.jar -P /usr/local/share/selenium
+    - sudo wget http://selenium-release.storage.googleapis.com/3.11/selenium-server-standalone-3.11.0.jar -P /usr/local/share/selenium
     # Download Selenium Chrome driver zip file
-    - sudo wget https://chromedriver.storage.googleapis.com/2.33/chromedriver_linux64.zip -P /usr/local/share
+    - sudo wget https://chromedriver.storage.googleapis.com/2.37/chromedriver_linux64.zip -P /usr/local/share
     # Unzip Chrome driver
     - sudo unzip /usr/local/share/chromedriver_linux64.zip -d /usr/local/share
     # Delete Chrome driver zip
     - sudo rm /usr/local/share/chromedriver_linux64.zip
     # Run Selenium with Chrome driver, and attempt to suppress output
-    - java -jar -Dwebdriver.chrome.driver="/usr/local/share/chromedriver" /usr/local/share/selenium/selenium-server-standalone-3.7.1.jar >/dev/null 2>&1 &
+    - java -jar -Dwebdriver.chrome.driver="/usr/local/share/chromedriver" /usr/local/share/selenium/selenium-server-standalone-3.11.0.jar >/dev/null 2>&1 &
 
 before_script:
     - travis_retry composer self-update
@@ -47,10 +47,22 @@ before_script:
     # Move out of public directory so Behat can be executed
     - cd ../
     # Set up MySQL
-    - mysql
-    - create database test
-    - exit
-    # Create .env
+    - mysql -e "create database test"
+    # Set up Env
+    - touch .env
+    - echo "ENVIRONMENT=development" >> .env
+    - echo "DB_HOST=127.0.0.1" >> .env
+    - echo "DB_USER=travis" >> .env
+    - echo "DB_PASSWORD=" >> .env
+    - echo "DB_NAME=test" >> .env
+    - echo "DB_PREFIX=wp_" >> .env
+    - echo "DB_CHARSET=utf8" >> .env
+    - echo "DB_COLLATE=utf8_unicode_ci" >> .env
+    - echo "WP_DEBUG=true" >> .env
+    - echo "DB_DEBUG_LOG=false" >> .env
+    - echo "WP_GET_GIT_VERSION=false" >> .env
+    - sleep 3
+
 
 script:
     - vendor/bin/phpstan analyse -l 7 -c phpstan.neon src/App src/Bootstrap src/Config src/Exception src/Helper

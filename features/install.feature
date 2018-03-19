@@ -5,5 +5,5 @@ Feature: WordPress Install
 
     Scenario: See Install Page
         Given I am on "/index.php"
-        Then I am on "/wordpress/wp-admin/install.php"
-        And I should see "Continue"
+        When I press "Continue"
+        Then I should see "Welcome"
