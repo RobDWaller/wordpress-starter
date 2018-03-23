@@ -14,7 +14,7 @@ class CustomPostType
     {
         //If we've set a single and plural title
         if ($titleSingle && $titlePlural) {
-            $titleSlug = sanitize_title($titleSingle);
+            $titleSlug = $this->sanitizeTitle($titleSingle);
 
             $defaults = array(
                 'labels' => array(
@@ -45,9 +45,9 @@ class CustomPostType
                 'can_export' => true
             );
 
-            $args = wp_parse_args($args, $defaults);
+            $args = $this->wpParseArgs($args, $defaults);
 
-            register_post_type($titleSlug, $args);
+            $this->registerPostType($titleSlug, $args);
         }
     }
 }

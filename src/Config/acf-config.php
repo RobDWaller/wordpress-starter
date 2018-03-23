@@ -1,7 +1,7 @@
-<?php 
+<?php
 
 /**
- * This provides as an example config for Advanced Custom Fields. It should be
+ * This provides an example config for Advanced Custom Fields. It should be
  * edited if the project requires the use of ACF.
  */
 

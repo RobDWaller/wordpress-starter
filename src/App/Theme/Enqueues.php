@@ -49,7 +49,7 @@ class Enqueues
 
     private function enqueueStyles()
     {
-        wp_enqueue_style('theme_css', get_template_directory_uri() . '/assets/build/' . $this->getFileName('css'));
+        $this->wpEnqueueStyle('theme_css', get_template_directory_uri() . '/assets/build/' . $this->getFileName('css'));
     }
 
     private function enqueueScripts()

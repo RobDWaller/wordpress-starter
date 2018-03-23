@@ -1,7 +1,6 @@
 <?php
     use Theme\Bootstrap\Helpers;
-use Theme\Bootstrap\Render;
-
+    use Theme\Bootstrap\Render;
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
