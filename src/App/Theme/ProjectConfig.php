@@ -1,5 +1,8 @@
 <?php
-namespace Theme\Bootstrap;
+namespace Theme;
+
+use App\WordPress\WordPress;
+use App\WordPress\Acf;
 
 /**
  * @author Chris Boakes <chris@chrisboakes.com>
@@ -9,39 +12,41 @@ namespace Theme\Bootstrap;
  */
 class ProjectConfig
 {
+    use WordPress, Acf;
+
     public static function ProjectConfig()
     {
 
         //Menus
-        add_theme_support('menus');
+        $this->addThemeSupport('menus');
 
         //Custom thumbnails
-        add_theme_support('post-thumbnails');
+        $this->addThemeSupport('post-thumbnails');
 
         //Custom image sizes
         //add_image_size('medium-cropped', 900, 500, true);
 
         //ACF Options page
         if (function_exists('acf_add_options_page')) {
-            acf_add_options_page(array(
+            $this->acfAddOptionsPage([
                 'page_title'    =>  'General Settings',
                 'menu_title'    =>  'General Settings',
                 'menu_slug'     =>  'theme-general-settings',
                 'capability'    =>  'edit_posts',
                 'redirect'      =>  false
-            ));
+            ]);
 
-            acf_add_options_sub_page(array(
+            $this->acfAddOptionsSubPage([
                 'page_title'    =>  'Header Settings',
                 'menu_title'    =>  'Header',
                 'parent_slug'   =>  'theme-general-settings',
-            ));
+            ]);
 
-            acf_add_options_sub_page(array(
+            $this->acfAddOptionsSubPage([
                 'page_title'    =>  'Footer Settings',
                 'menu_title'    =>  'Footer',
                 'parent_slug'   =>  'theme-general-settings',
-            ));
+            ]);
         }
     }
 }

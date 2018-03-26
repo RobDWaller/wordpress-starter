@@ -7,7 +7,6 @@ namespace App\WordPress;
  *
  * Provides an interface for WordPress filter methods
  */
-
 trait WordPress
 {
     /**
@@ -89,8 +88,48 @@ trait WordPress
         return remove_action($tag, $function, $priority);
     }
 
-    public function wpEnqueueStyle()
+    public function wpEnqueueStyle(string $handle, string $src = '', array $deps = [], $ver = false, string $media = 'all')
     {
-        wp_enqueue_style()
+        wp_enqueue_style($handle, $src, $deps, $ver, $media);
+    }
+
+    public function wpEnqueueScript(string $handle, string $src = '', array $deps = [], $ver = false, bool $inFooter = false)
+    {
+        wp_enqueue_script($handle, $src, $deps, $ver, $inFooter);
+    }
+
+    public function getTemplateDirectoryUri(): string
+    {
+        return get_template_directory_uri();
+    }
+
+    public function wpTitle(string $sep = '&raquo;', bool $display = true, string $seplocation = ''): string
+    {
+        return wp_title($sep, $display, $seplocation);
+    }
+
+    public function getBlogInfo(string $show = '', string $filter = 'raw' ): string
+    {
+        return get_bloginfo($show, $filter);
+    }
+
+    public function addThemeSupport(string $feature, $args = null)
+    {
+        return add_theme_support($feature, $args);
+    }
+
+    public function removeFilter(string $tag, callable $functionToRemove, int $priority = 10): bool
+    {
+        return remove_filter($tag, $functionToRemove, $priority);
+    }
+
+    public function removeQueryArg($key, $query = false): string
+    {
+        return remove_query_arg($key, $query);
+    }
+
+    public function wpDeregisterScript(string $handle)
+    {
+        wp_deregister_script($handle);
     }
 }

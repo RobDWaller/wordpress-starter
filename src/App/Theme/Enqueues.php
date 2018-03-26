@@ -1,5 +1,7 @@
 <?php
-namespace Theme\Bootstrap;
+namespace Theme;
+
+use App\WordPress\WordPress;
 
 /**
  * @author Chris Boakes <chris@chrisboakes.com>
@@ -9,6 +11,8 @@ namespace Theme\Bootstrap;
  */
 class Enqueues
 {
+    use WordPress;
+
     private $buildPath;
     private $manifestContent;
     private $codeSplit;
@@ -49,27 +53,30 @@ class Enqueues
 
     private function enqueueStyles()
     {
-        $this->wpEnqueueStyle('theme_css', get_template_directory_uri() . '/assets/build/' . $this->getFileName('css'));
+        $this->wpEnqueueStyle('theme_css', $this->getTemplateDirectoryUri() . '/assets/build/' . $this->getFileName('css'));
     }
 
+    /**
+     * @todo the hot reload stuff is deeply flawed.
+     */
     private function enqueueScripts()
     {
         // Hot Reloading is enabled and we are in development mode then load the JS from Webpack Dev Server
         $webpackHotReload = getenv('DEV_HOT_RELOADING') === 'true' && getenv('ENVIRONMENT') !== 'production';
-        $themeBuildFolder = get_template_directory_uri() . '/assets/build/';
+        $themeBuildFolder = $this->getTemplateDirectoryUri() . '/assets/build/';
 
         // If code splitting is enabled then split the vendor code to a seprate file along with webpack manifest
         if ($this->codeSplit) {
-            wp_enqueue_script('manifest', $this->buildPath . $this->codeSplit['manifest'], array(), '', true);
-            wp_enqueue_script('vendor', $this->buildPath . $this->codeSplit['vendor'], array(), '', true);
+            $this->wpEnqueueScript('manifest', $this->buildPath . $this->codeSplit['manifest'], array(), '', true);
+            $this->wpEnqueueScript('vendor', $this->buildPath . $this->codeSplit['vendor'], array(), '', true);
         }
 
         // App.js - main javascript file
         if ($webpackHotReload) {
             $webpackDevServerPath = 'http://localhost:8080/wp-content/themes/project-theme/assets/build/';
-            wp_enqueue_script('app', $webpackDevServerPath . $this->getFileName('js'), array(), '', true);
+            $this->wpEnqueueScript('app', $webpackDevServerPath . $this->getFileName('js'), array(), '', true);
         } else {
-            wp_enqueue_script('app', $themeBuildFolder . $this->getFileName('js'), array(), '', true);
+            $this->wpEnqueueScript('app', $themeBuildFolder . $this->getFileName('js'), array(), '', true);
         }
     }
 }

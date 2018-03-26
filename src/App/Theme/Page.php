@@ -1,5 +1,7 @@
 <?php
-namespace Theme\Bootstrap;
+namespace Theme;
+
+use App\WordPress\WordPress;
 
 /**
  * @author Chris Boakes <chris@chrisboakes.com>
@@ -7,19 +9,21 @@ namespace Theme\Bootstrap;
  *
  * Wordpress Helper Functions
  */
-class Helpers
+class Page
 {
+    use WordPress;
+
     //<title> tag
     public static function getPageTitle()
     {
         //Yoast
-        $title = wp_title('', false);
+        $title = $this->wpTitle('', false);
         //No Yoast
         if (!defined('WPSEO_VERSION')) {
             if ($title) {
                 $title .= ' | ';
             }
-            $title .= get_bloginfo('name');
+            $title .= $this->getBlogInfo('name');
         }
         return $title;
     }

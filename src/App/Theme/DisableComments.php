@@ -1,5 +1,7 @@
 <?php
-namespace Theme\Bootstrap;
+namespace Theme;
+
+use App\WordPress\WordPress;
 
 /**
  * @author Milad Alizadeh <hello@mili.london>
@@ -7,6 +9,8 @@ namespace Theme\Bootstrap;
  */
 class DisableComments
 {
+    use WordPress;
+
     public static function disableAllComments()
     {
         $this->addAction('admin_init', function () {

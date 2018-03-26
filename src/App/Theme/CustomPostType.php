@@ -1,5 +1,7 @@
 <?php
-namespace Theme\Bootstrap;
+namespace Theme;
+
+use App\WordPress\WordPress;
 
 /**
  * @author Chris Boakes <chris@chrisboakes.com>
@@ -9,6 +11,8 @@ namespace Theme\Bootstrap;
  */
 class CustomPostType
 {
+    use WordPress;
+
     //Custom post type function
     public static function createPostType($titleSingle=false, $titlePlural=false, $args=array())
     {
