@@ -1,18 +1,18 @@
 <?php
-    use Theme\Bootstrap\CustomPostType;
-use Theme\Bootstrap\CustomTaxonomy;
-use Theme\Bootstrap\Enqueues;
-use Theme\Bootstrap\Reset;
-use Theme\Bootstrap\DisableComments;
-use Theme\Bootstrap\Utilities;
-use Theme\Bootstrap\ProjectConfig;
+use App\Theme\CustomPostType;
+use App\Theme\CustomTaxonomy;
+use App\Theme\Enqueues;
+use App\Theme\Reset;
+use App\Theme\DisableComments;
+use App\Theme\Utilities;
+use App\Theme\ProjectConfig;
 
 //Reset Wordpress (removes redundant scripts etc.)
     add_action('init', 'resetWordpressDefaults');
     function resetWordpressDefaults()
     {
-        DisableComments::disableAllComments();
-        Reset::resetWordpressDefaults();
+        // DisableComments::disableAllComments();
+        // Reset::resetWordpressDefaults();
     }
 
     //Enqueue scripts and styles
@@ -41,5 +41,5 @@ use Theme\Bootstrap\ProjectConfig;
     add_action('init', 'projectConfig');
     function projectConfig()
     {
-        ProjectConfig::ProjectConfig();
+        // ProjectConfig::ProjectConfig();
     }

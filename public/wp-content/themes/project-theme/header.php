@@ -1,11 +1,14 @@
 <?php
-    use Theme\Page;
-    use Theme\Render;
+    use App\Theme\Page;
+    use App\Theme\Render;
+
+    $page = new Page;
+    $render = new Render;
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
 	<head>
-		<title><?= Page::getPageTitle(); ?></title>
+		<title><?= $page->getPageTitle(); ?></title>
 
 		<meta name="theme-color" content="#333">
 		<meta charset="<?php bloginfo('charset'); ?>" />
@@ -29,7 +32,7 @@
 						</div>
 					</div>
 					<div class="l-header__nav">
-						<?= Render::view('Components/c-nav'); ?>
+						<?= $render->view('Components/c-nav'); ?>
 					</div>
 				</div>
 			</header>
