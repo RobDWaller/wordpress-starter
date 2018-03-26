@@ -1,5 +1,5 @@
 <?php
-namespace Theme;
+namespace App\Theme;
 
 use App\WordPress\WordPress;
 
@@ -13,7 +13,7 @@ class Reset
 {
     use WordPress;
 
-    public static function resetWordpressDefaults()
+    public function resetWordpressDefaults()
     {
         //Remove emojis
         $this->removeAction('wp_head', 'print_emoji_detection_script', 7);
@@ -24,7 +24,7 @@ class Reset
         //Additional removals
         $this->removeAction('wp_head', 'rest_output_link_wp_head');
         $this->removeAction('wp_head', 'wp_oembed_add_discovery_links');
-        $this->removeAction('template_redirect', 'rest_output_link_header', 11, 0);
+        $this->removeAction('template_redirect', 'rest_output_link_header', 11);
         $this->removeAction('wp_head', 'rsd_link');
         $this->removeAction('wp_head', 'wlwmanifest_link');
         $this->removeAction('wp_head', 'wp_generator');
@@ -58,15 +58,15 @@ class Reset
 
         // Remove Wordpress version number from scripts and css
         $this->addFilter('style_loader_src', function ($src) {
-            return self::removeWpVersionNo($src);
+            return $this->removeWpVersionNo($src);
         }, 9999);
 
         $this->addFilter('script_loader_src', function ($src) {
-            return self::removeWpVersionNo($src);
+            return $this->removeWpVersionNo($src);
         }, 9999);
     }
 
-    public static function removeWpVersionNo($src)
+    public function removeWpVersionNo($src)
     {
         if (strpos($src, 'ver=' . $this->getBlogInfo('version'))) {
             $src = $this->removeQueryArg('ver', $src);

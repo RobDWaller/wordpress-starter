@@ -1,5 +1,5 @@
 <?php
-namespace Theme;
+namespace App\Theme;
 
 use App\WordPress\WordPress;
 
@@ -20,7 +20,7 @@ class Render
      * @example $this->loadView('grid', $data);
      * @return string Compiled view
      */
-    public static function view($view, $data = null)
+    public function view($view, $data = null)
     {
         ob_start();
         include $this->getTemplateDirectory() . "/App/View/" . $view . ".php";

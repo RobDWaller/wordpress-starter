@@ -65,7 +65,7 @@ before_script:
 
 
 script:
-    - vendor/bin/phpstan analyse -l 7 -c phpstan.neon src/App src/Bootstrap src/Config src/Exception src/Helper
+    - vendor/bin/phpstan analyse -l 7 -c phpstan.neon src/App
     - vendor/bin/behat
     #- vendor/bin/phpunit --coverage-clover=coverage.xml
 

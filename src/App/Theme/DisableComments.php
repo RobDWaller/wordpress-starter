@@ -1,5 +1,5 @@
 <?php
-namespace Theme;
+namespace App\Theme;
 
 use App\WordPress\WordPress;
 
@@ -11,7 +11,7 @@ class DisableComments
 {
     use WordPress;
 
-    public static function disableAllComments()
+    public function disableAllComments()
     {
         $this->addAction('admin_init', function () {
             $post_types = $this->getPostTypes();

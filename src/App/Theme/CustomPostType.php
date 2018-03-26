@@ -1,5 +1,5 @@
 <?php
-namespace Theme;
+namespace App\Theme;
 
 use App\WordPress\WordPress;
 
@@ -14,7 +14,7 @@ class CustomPostType
     use WordPress;
 
     //Custom post type function
-    public static function createPostType($titleSingle=false, $titlePlural=false, $args=array())
+    public function createPostType($titleSingle=false, $titlePlural=false, $args=array())
     {
         //If we've set a single and plural title
         if ($titleSingle && $titlePlural) {

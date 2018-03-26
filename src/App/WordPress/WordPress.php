@@ -52,7 +52,7 @@ trait WordPress
 
     public function removePostTypeSupport(string $postType, string $supports)
     {
-        remove_post_type_support($postType, $support);
+        remove_post_type_support($postType, $supports);
     }
 
     /**
@@ -96,6 +96,11 @@ trait WordPress
     public function wpEnqueueScript(string $handle, string $src = '', array $deps = [], $ver = false, bool $inFooter = false)
     {
         wp_enqueue_script($handle, $src, $deps, $ver, $inFooter);
+    }
+
+    public function getTemplateDirectory(): string
+    {
+        return get_template_directory();
     }
 
     public function getTemplateDirectoryUri(): string

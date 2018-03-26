@@ -1,5 +1,5 @@
 <?php
-namespace Theme;
+namespace App\Theme;
 
 use App\WordPress\WordPress;
 
@@ -14,7 +14,7 @@ class Page
     use WordPress;
 
     //<title> tag
-    public static function getPageTitle()
+    public function getPageTitle()
     {
         //Yoast
         $title = $this->wpTitle('', false);

@@ -1,5 +1,5 @@
 <?php
-namespace Theme;
+namespace App\Theme;
 
 use App\WordPress\WordPress;
 use App\WordPress\Acf;
@@ -14,7 +14,7 @@ class ProjectConfig
 {
     use WordPress, Acf;
 
-    public static function ProjectConfig()
+    public function ProjectConfig()
     {
 
         //Menus
