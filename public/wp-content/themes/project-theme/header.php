@@ -1,11 +1,11 @@
 <?php
-    use Theme\Bootstrap\Helpers;
-    use Theme\Bootstrap\Render;
+    use Theme\Page;
+    use Theme\Render;
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
 	<head>
-		<title><?= Helpers::getPageTitle(); ?></title>
+		<title><?= Page::getPageTitle(); ?></title>
 
 		<meta name="theme-color" content="#333">
 		<meta charset="<?php bloginfo('charset'); ?>" />

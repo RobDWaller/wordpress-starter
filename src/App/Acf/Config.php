@@ -1,4 +1,6 @@
-<?php namespace App;
+<?php
+
+namespace App\Acf;
 
 /**
  * @author Rob Waller <rdwaller1984@googlemail.com>
@@ -10,14 +12,14 @@
  * made without the need to deploy an updated database.
  */
 
-use Config\Config;
-use Exception\AcfException;
-use Helper\Acf;
-use Helper\Filter;
+use App\Config\Config as AppConfig;
+use App\Exception\AcfException;
+use App\WordPress\Acf;
+use App\WordPress\WordPress;
 
-class AcfConfig
+class Config
 {
-    use Acf, Filter;
+    use Acf, WordPress;
 
     protected $config;
 
@@ -26,7 +28,7 @@ class AcfConfig
      */
     public function __construct()
     {
-        $this->config = Config::getInstance();
+        $this->config = AppConfig::getInstance();
     }
 
     /**

@@ -1,6 +1,6 @@
 <?php
 
-namespace Helper;
+namespace App\WordPress;
 
 /**
  * @author Rob Waller <rdwaller1984@googlemail.com>

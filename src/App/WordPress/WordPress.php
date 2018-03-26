@@ -17,7 +17,7 @@ trait WordPress
         return add_filter($filter, $method, $priority, $args);
     }
 
-    public function sanitizeTitle(string $title, sting $fallbackTitle = '', string $context = 'save'): string
+    public function sanitizeTitle(string $title, string $fallbackTitle = '', string $context = 'save'): string
     {
         return sanitize_title($title, $fallbackTitle, $context);
     }

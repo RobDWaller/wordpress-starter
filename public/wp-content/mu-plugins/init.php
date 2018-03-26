@@ -1,11 +1,11 @@
 <?php
 
 try {
-    $respository = Config\Config::getInstance();
+    $respository = App\Config\Config::getInstance();
 
     $plugins = $respository->get('mu-plugins');
 
-    if (count($plugins) >= 0) {
+    if (count($plugins) >= 1) {
         foreach ($plugins as $plugin) {
             require_once __DIR__ . '/' . $plugin;
         }

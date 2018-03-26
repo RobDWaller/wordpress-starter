@@ -24,8 +24,6 @@
  */
 require_once(__DIR__ . '/../vendor/autoload.php');
 
-use Illuminate\Database\Capsule\Manager as Capsule;
-
 /**
  * @author Rob Waller <rdwaller1984@googlemail.com>
  * Initiate .env class
