@@ -1,5 +1,7 @@
 <?php
-namespace Theme\Bootstrap;
+namespace App\Theme;
+
+use App\WordPress\WordPress;
 
 /**
  * @author Milad Alizadeh <hello@mili.london>
@@ -9,6 +11,8 @@ namespace Theme\Bootstrap;
  */
 class Render
 {
+    use WordPress;
+
     /**
      * Loads a view
      * @param  string $view
@@ -16,10 +20,10 @@ class Render
      * @example $this->loadView('grid', $data);
      * @return string Compiled view
      */
-    public static function view($view, $data = null)
+    public function view($view, $data = null)
     {
         ob_start();
-        include get_template_directory() . "/App/View/" . $view . ".php";
+        include $this->getTemplateDirectory() . "/App/View/" . $view . ".php";
         $view = ob_get_contents();
         ob_end_clean();
         return $view;

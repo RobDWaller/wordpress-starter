@@ -1,6 +1,6 @@
 <?php
 
-namespace Config;
+namespace App\Config;
 
 use Illuminate\Config\Repository;
 use Illuminate\Filesystem\Filesystem;
@@ -47,7 +47,7 @@ class Config
                 $result[$this->fileSystem->name($file)] = require_once $file;
             }
         }
-        
+
         return $result;
     }
 }

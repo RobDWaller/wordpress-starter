@@ -1,5 +1,7 @@
 <?php
-namespace Theme\Bootstrap;
+namespace App\Theme;
+
+use App\WordPress\WordPress;
 
 /**
  * @author Chris Boakes <chris@chrisboakes.com>
@@ -9,15 +11,17 @@ namespace Theme\Bootstrap;
  */
 class CustomTaxonomy
 {
+    use WordPress;
+
     //Return array of labels and arguments for custom taxonomy
     public static function createTaxonomy($titleSingle, $titlePlural, $taxSlug)
     {
 
         //Empty array to store the labels and arguments
-        $taxVars			=	array();
+        $taxVars = [];
 
         //Labels for the new taxonomy
-        $taxLabels			=	array(
+        $taxLabels = [
             "name"              =>	_x($titlePlural, "taxonomy general name"),
             "singular_name"     =>	_x($titleSingle, "taxonomy singular name"),
             "search_items"      =>	__("Search $titlePlural"),
@@ -29,17 +33,17 @@ class CustomTaxonomy
             "add_new_item"      =>	__("Add New $titleSingle"),
             "new_item_name"     =>	__("New $titleSingle Name"),
             "menu_name"         =>	__("$titleSingle")
-        );
+        ];
 
         //Arguments
-        $taxVars["args"] = array(
+        $taxVars["args"] = [
             "hierarchical"		=>	true,
             "labels"			=>	$taxLabels,
             "show_ui"			=>	true,
             "show_admin_column"	=>	true,
             "query_var"			=>	true,
             "rewrite"			=>	array( "slug" => "$taxSlug" )
-        );
+        ];
 
         //Return the array
         return $taxVars;

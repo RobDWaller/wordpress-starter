@@ -1,6 +1,6 @@
 <?php
 
-namespace Helper;
+namespace App\WordPress;
 
 /**
  * @author Rob Waller <rdwaller1984@googlemail.com>
@@ -15,5 +15,15 @@ trait Acf
     public function acfAddLocalFieldGroup(array $data)
     {
         acf_add_local_field_group($data);
+    }
+
+    public function acfAddOptionsPage(array $data)
+    {
+        acf_add_options_page($data);
+    }
+
+    public function acfAddOptionsSubPage(array $data)
+    {
+        acf_add_options_sub_page($data);
     }
 }

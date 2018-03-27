@@ -1,4 +1,6 @@
-<?php namespace Exception;
+<?php
+
+namespace App\Exception;
 
 /**
  * @author Rob Waller <rdwaller1984@googlemail.com>
