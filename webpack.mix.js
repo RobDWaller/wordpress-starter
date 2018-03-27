@@ -12,9 +12,6 @@
 const mix = require('laravel-mix');
 const SvgStore = require('webpack-svgstore-plugin');
 
-// .env Variables
-const host = '192.168.33.10';
-
 // Assets Path
 const jsSrcPath = 'src/Assets/js/app.js';
 const scssSrcPath = 'src/Assets/scss/style.scss';
@@ -70,17 +67,4 @@ if (mix.config.production) {
 } else {
     // Enable sourcemap for development
     mix.sourceMaps();
-}
-
-// Browser Sync
-if (!mix.config.hmr) {
-    mix.browserSync({
-        proxy: host,
-        browser: 'google chrome',
-        files: [
-            '**/project-theme/**/*.php',
-            `${destPath}/style.css`,
-            `${destPath}/app.js`
-        ]
-    });
 }
