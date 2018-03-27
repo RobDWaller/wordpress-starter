@@ -53,8 +53,7 @@
         },
         "snapshotSerializers": [
             "<rootDir>/node_modules/jest-serializer-vue"
-        ],
-        "mapCoverage": true
+        ]
     },
     "author": "Chris Boakes <chris@chrisboakes.com>",
     "license": "ISC"
