@@ -113,7 +113,7 @@ trait WordPress
         return wp_title($sep, $display, $seplocation);
     }
 
-    public function getBlogInfo(string $show = '', string $filter = 'raw' ): string
+    public function getBlogInfo(string $show = '', string $filter = 'raw'): string
     {
         return get_bloginfo($show, $filter);
     }
