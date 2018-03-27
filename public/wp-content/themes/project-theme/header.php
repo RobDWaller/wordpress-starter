@@ -1,8 +1,8 @@
 <?php
     use App\Theme\Page;
-    use App\Theme\Render;
+use App\Theme\Render;
 
-    $page = new Page;
+$page = new Page;
     $render = new Render;
 ?>
 <!doctype html>
