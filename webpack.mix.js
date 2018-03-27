@@ -55,11 +55,6 @@ mix.webpackConfig({
                 test: /(\.vue|\.js)$/,
                 loader: 'babel-loader',
                 exclude: /node_modules/
-            },
-            {
-                test: /(\.vue|\.js)$/,
-                loader: 'eslint-loader',
-                exclude: /node_modules/
             }
         ]
     }
