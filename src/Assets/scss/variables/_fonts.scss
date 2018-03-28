@@ -1,14 +1,18 @@
-//Typefaces
+/*
+ * Font faces, sizing and defaults
+ */
+
+// Typefaces
 $arial: 'Arial', sans-serif;
 
-//Font sizes
+// Font sizes
 $text-small: 1.4rem;
 $text-regular: 1.6rem;
 $text-medium: 2.2rem;
 $text-large: 3rem;
 $text-xlarge: 4rem;
 
-//Global
+// Global
 $primary-font: $arial;
 $primary-font-color: $black;
 $primary-font-weight: normal;

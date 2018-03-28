@@ -1,11 +1,15 @@
-// Grid
-$max-width: 1400px;
-$max-width-narrow: 720px;
+/*
+ * Lost grid config, spacing and limited width
+ */
 
-// Lost Grid Configurations
+// Lost Grid Configuration
 @lost gutter 3rem;
 @lost flexbox flex;
 @lost rounder 99.9999;
+
+// Grid
+$max-width: 1400px;
+$max-width-narrow: 720px;
 
 // Spacing
 $horizontal-padding-small: 30px;
