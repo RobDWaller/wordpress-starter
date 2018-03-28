@@ -1,3 +1,7 @@
+/*
+ * Background colour utility
+ */
+
 .u-bg-color {
     @each $color, $color-value in $colors {
         &--#{$color} {

@@ -1,10 +1,10 @@
+/*
+ * Button utility
+ */
+
 .u-button {
     cursor: pointer;
     user-select: none;
-
-    &:hover {
-        
-    }
 
     &:focus {
         outline: 0;
