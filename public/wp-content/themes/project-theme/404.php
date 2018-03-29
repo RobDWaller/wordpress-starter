@@ -1,12 +1,12 @@
 <?php include("header.php"); ?>
 
-	<section class="l-four-o-four">
+	<article>
 
 		<header>
 			<h1>404 error</h1>
 		</header>
 		<p>Sorry, the page you requested could not be found.</p>
 
-	</section>
+	</article>
 
 <?php include("footer.php"); ?>
