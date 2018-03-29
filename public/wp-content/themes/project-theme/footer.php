@@ -1,6 +1,7 @@
 <?php
 	use App\Theme\WordpressHelper;
-	$wordpress = new WordpressHelper;
+
+$wordpress = new WordpressHelper;
 ?>
 
 			</main>

@@ -3,6 +3,7 @@ namespace App\Theme;
 
 use App\WordPress\WordPress;
 
-class WordpressHelper {
+class WordpressHelper
+{
     use Wordpress;
 }
