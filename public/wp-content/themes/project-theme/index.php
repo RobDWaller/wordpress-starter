@@ -1,7 +1,12 @@
-<?php include("header.php"); ?>
+<?php
+use Project\Theme\Previews;
+use App\Theme\Render;
 
-    <div class="u-l-container">
-        <h1>Hello World!!</h1>
-    </div>
+$render = new Render;
 
-<?php include("footer.php"); ?>
+include("header.php");
+
+$previews = new Previews('post', 1, []);
+echo $render->view('components/c-preview-block', $previews->getPreviews());
+
+include("footer.php");
