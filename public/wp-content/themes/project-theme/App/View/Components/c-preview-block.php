@@ -1,5 +1,6 @@
 <?php
 use App\Theme\Render;
+
 $render = new Render;
 
 if ($data && !empty($data)):
