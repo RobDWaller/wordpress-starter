@@ -7,7 +7,7 @@ if ($data && !empty($data)):
 
     <div class="u-l-container">
         <?php
-            foreach($data as $preview):
+            foreach ($data as $preview):
                 echo $render->view('components/c-preview', $preview);
             endforeach;
         ?>

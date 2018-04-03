@@ -15,7 +15,7 @@ class Previews
     protected $count;
     protected $additionalParams;
 
-    function __construct(string $postType = 'post', int $count = 5, array $additionalParams = [])
+    public function __construct(string $postType = 'post', int $count = 5, array $additionalParams = [])
     {
         $this->postType = $postType;
         $this->count = $count;
@@ -69,7 +69,7 @@ class Previews
     private function appendParams(array $args, array $params)
     {
         if (!empty($params)) {
-            foreach($params as $param) {
+            foreach ($params as $param) {
                 if (array_key_exists('arg', $param) && array_key_exists('value', $param)) {
                     $args[$param['arg']] = $param['value'];
                 }
