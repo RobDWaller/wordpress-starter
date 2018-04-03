@@ -1,3 +1,7 @@
+/*
+ * Helpful mixins
+ */
+
 // Mixin for creating media queries
 @mixin breakpoint($min-width: null, $min-height: null, $medium: screen) {
     @if ($min-width != null and $min-height != null) {

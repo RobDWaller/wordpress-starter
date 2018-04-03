@@ -1,4 +1,7 @@
 <?php include("header.php"); ?>
-<h1>Hello World!!</h1>
+
+    <div class="u-l-container">
+        <h1>Hello World!!</h1>
+    </div>
 
 <?php include("footer.php"); ?>

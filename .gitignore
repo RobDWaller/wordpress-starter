@@ -15,6 +15,7 @@
 /public/wp-content/uploads/*
 !/public/wp-content/uploads/.gitkeep
 /public/wp-content/debug.log
+/public/wp-content/languages/
 /public/hot
 .env
 mix.*.js

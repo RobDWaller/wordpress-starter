@@ -1,0 +1,28 @@
+.l-site-header {
+    margin: 0;
+    overflow: hidden;
+    padding: 2rem 0;
+    width: 100%;
+
+    @include breakpoint($medium) {
+        lost-flex-container: row;
+    }
+
+    &__title {
+        @include breakpoint($medium) {
+            lost-column: 1/4;
+        }
+    }
+
+    &__nav {
+        @include breakpoint($medium) {
+            lost-column: 2/4;
+        }
+    }
+
+    &__social {
+        @include breakpoint($medium) {
+            lost-column: 1/4;
+        }
+    }
+}
