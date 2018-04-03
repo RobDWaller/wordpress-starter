@@ -53,7 +53,8 @@ class Previews
                 $previews[] = [
                     'title' => get_the_title(),
                     'excerpt' => get_the_excerpt(),
-                    'link' => get_permalink()
+                    'link' => get_permalink(),
+                    'image' => 'https://picsum.photos/600/330'
                 ];
             }
         wp_reset_postdata();

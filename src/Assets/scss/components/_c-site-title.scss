@@ -1,3 +1,9 @@
 .c-site-title {
-
+    &__link {
+        color: $gold;
+        font-size: $text-large;
+        font-weight: $weight-bold;
+        line-height: 1.2;
+        text-transform: uppercase;
+    }
 }

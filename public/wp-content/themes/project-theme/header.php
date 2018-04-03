@@ -21,8 +21,8 @@ $wordpress = new WordpressHelper;
 
 	<body <?php body_class(); ?>>
 
-		<div class="u-l-container">
-			<div class="l-site-header">
+		<div class="u-l-container u-l-horizontal-padding">
+			<div class="l-site-header c-site-header">
 				<div class="l-site-header__title">
 					<?= $render->view('Components/c-site-title', $wordpress->getBlogInfo('title')); ?>
 				</div>

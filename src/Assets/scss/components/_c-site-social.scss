@@ -1,14 +1,23 @@
 .c-site-social {
-    align-items: flex-start;
+    align-items: center;
     display: flex;
     flex-direction: row;
     margin: 0;
     width: 100%;
 
+    @include breakpoint($medium) {
+        justify-content: flex-end;
+    }
+
     &__item {
         height: 2rem;
-        margin-left: 2rem;
+        margin-right: 2rem;
         width: 2rem;
+
+        @include breakpoint($medium) {
+            margin-left: 2rem;
+            margin-right: inherit;
+        }
     }
 
     &__link {
