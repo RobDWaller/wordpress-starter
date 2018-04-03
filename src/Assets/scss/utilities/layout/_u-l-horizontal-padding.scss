@@ -10,9 +10,4 @@
         padding-left: $horizontal-padding-medium;
         padding-right: $horizontal-padding-medium;
     }
-
-    @include breakpoint(calc($limit-width - $horizontal-padding-medium)) {
-        padding-left: 0;
-        padding-right: 0;
-    }
 }
