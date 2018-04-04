@@ -43,6 +43,7 @@ try {
             'ENVIRONMENT',
             'WP_DEBUG',
             'WP_DEBUG_LOG',
+            'SSL',
             'AUTH_KEY',
             'SECURE_AUTH_KEY',
             'LOGGED_IN_KEY',
@@ -50,8 +51,7 @@ try {
             'AUTH_SALT',
             'SECURE_AUTH_SALT',
             'LOGGED_IN_SALT',
-            'NONCE_SALT',
-            'SSL'
+            'NONCE_SALT'
         ]
     );
 } catch (Throwable $e) {
