@@ -61,6 +61,7 @@ before_script:
     - echo "WP_DEBUG=true" >> .env
     - echo "DB_DEBUG_LOG=false" >> .env
     - echo "WP_GET_GIT_VERSION=false" >> .env
+    - /vendor/bin/wpsalts dotenv  --clean >> .env
     - sleep 3
 
 

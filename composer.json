@@ -20,7 +20,7 @@
         "vlucas/phpdotenv": "2.4.*",
         "illuminate/config": "5.5.*",
         "illuminate/filesystem": "5.5.*",
-        "rbdwllr/wordpress-salts-generator": "0.1.0-alpha"
+        "rbdwllr/wordpress-salts-generator": "dev-master"
     },
     "require-dev": {
         "behat/behat": "3.4.*",
