@@ -28,9 +28,36 @@ require_once(__DIR__ . '/../vendor/autoload.php');
  * @author Rob Waller <rdwaller1984@googlemail.com>
  * Initiate .env class
  */
-
-$dotenv = new Dotenv\Dotenv(__DIR__ . '/../');
-$dotenv->load();
+try {
+    $dotenv = new Dotenv\Dotenv(__DIR__ . '/../');
+    $dotenv->load();
+    $dotenv->required(
+        [
+            'DB_NAME',
+            'DB_USER',
+            'DB_PASSWORD',
+            'DB_HOST',
+            'DB_CHARSET',
+            'DB_COLLATE',
+            'DB_PREFIX',
+            'ENVIRONMENT',
+            'WP_DEBUG',
+            'WP_DEBUG_LOG',
+            'AUTH_KEY',
+            'SECURE_AUTH_KEY',
+            'LOGGED_IN_KEY',
+            'NONCE_KEY',
+            'AUTH_SALT',
+            'SECURE_AUTH_SALT',
+            'LOGGED_IN_SALT',
+            'NONCE_SALT',
+            'SSL'
+        ]
+    );
+} catch (Throwable $e) {
+    echo $e->getMessage();
+    die();
+}
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
