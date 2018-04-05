@@ -5,7 +5,7 @@ use App\WordPress\WordPress;
 use \WP_Query;
 
 /**
- * Fetch and parse Wordpress for previews
+ * Fetch and parse Wordpress posts (or custom post types) for preview data of the full post
  *
  * @author Chris Boakes <chris@chrisboakes.com>
  */
