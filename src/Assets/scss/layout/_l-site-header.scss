@@ -1,27 +1,35 @@
 .l-site-header {
     margin: 0;
+    margin-bottom: 2rem;
     overflow: hidden;
     padding: 2rem 0;
     width: 100%;
 
-    @include breakpoint($medium) {
+    @include breakpoint($small) {
+        align-items: center;
         lost-flex-container: row;
     }
 
     &__title {
-        @include breakpoint($medium) {
+        margin-bottom: 1rem;
+
+        @include breakpoint($small) {
             lost-column: 1/4;
+            margin-bottom: 0;
         }
     }
 
     &__nav {
-        @include breakpoint($medium) {
+        margin-bottom: 1rem;
+
+        @include breakpoint($small) {
             lost-column: 2/4;
+            margin-bottom: 0;
         }
     }
 
     &__social {
-        @include breakpoint($medium) {
+        @include breakpoint($small) {
             lost-column: 1/4;
         }
     }

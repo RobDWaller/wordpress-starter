@@ -1,0 +1,12 @@
+.u-more {
+    color: $primary-font-color;
+    font-weight: $weight-bold;
+
+    &::after {
+        content: '+';
+    }
+
+    &:hover {
+        color: $gold;
+    }
+}

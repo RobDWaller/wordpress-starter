@@ -1,0 +1,11 @@
+.l-preview-block {
+    @include breakpoint($medium) {
+        lost-flex-container: row;
+    }
+
+    &__item {
+        @include breakpoint($medium) {
+            lost-column: 1/2 2 4rem;
+        }
+    }
+}

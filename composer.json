@@ -43,7 +43,8 @@
             "App\\": "src/App/",
             "Exception\\": "src/Exception/",
             "Theme\\Bootstrap\\": "src/Bootstrap/",
-            "Helper\\": "src/Helper/"
+            "Helper\\": "src/Helper/",
+            "Project\\Theme\\": "public/wp-content/themes/project-theme/App/Model/"
         }
     }
 }

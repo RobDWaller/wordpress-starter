@@ -1,3 +1,19 @@
-.c-nav {
+// scss-lint:disable NestingDepth
 
+.c-site-nav {
+    .page_item {
+        a {
+            color: $primary-font-color;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+
+        &.current_page_item {
+            a {
+                text-decoration: underline;
+            }
+        }
+    }
 }
