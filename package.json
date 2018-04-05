@@ -15,8 +15,6 @@
         "laravel-mix": "2.0.0",
         "lost": "^8.2.0",
         "postcss-encode-background-svgs": "^1.0.3",
-        "vue-jest": "^2.1.0",
-        "vue-test-utils": "^1.0.0-beta.11",
         "webpack-svgstore-plugin": "^4.0.1"
     },
     "scripts": {
@@ -30,20 +28,15 @@
     "jest": {
         "moduleFileExtensions": [
             "js",
-            "json",
-            "vue"
+            "json"
         ],
         "transform": {
-            "^.+\\.js$": "<rootDir>/node_modules/babel-jest",
-            ".*\\.(vue)$": "<rootDir>/node_modules/vue-jest"
+            "^.+\\.js$": "<rootDir>/node_modules/babel-jest"
         },
         "moduleNameMapper": {
             "^@/(.*)$": "<rootDir>/src/$1"
-        },
-        "snapshotSerializers": [
-            "<rootDir>/node_modules/jest-serializer-vue"
-        ]
+        }
     },
     "author": "Chris Boakes <chris@chrisboakes.com>",
-    "license": "ISC"
+    "license": "MIT"
 }
