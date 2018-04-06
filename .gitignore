@@ -34,3 +34,4 @@ __MACOSX/
 Vagrantfile
 yarn-error.log
 composer.lock
+yarn.lock
