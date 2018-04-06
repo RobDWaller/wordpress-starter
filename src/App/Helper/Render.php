@@ -1,5 +1,5 @@
 <?php
-namespace App\Theme;
+namespace App\Helper;
 
 use App\WordPress\WordPress;
 
@@ -23,7 +23,7 @@ class Render
     public function view($view, $data = null)
     {
         ob_start();
-        include $this->getTemplateDirectory() . "/App/View/" . $view . ".php";
+        include $this->getTemplateDirectory() . "/Theme/View/" . $view . ".php";
         $view = ob_get_contents();
         ob_end_clean();
         return $view;

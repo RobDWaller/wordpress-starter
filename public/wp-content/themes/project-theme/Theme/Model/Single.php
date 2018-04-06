@@ -1,5 +1,5 @@
 <?php
-namespace Project\Theme;
+namespace Theme\Model;
 
 use App\WordPress\WordPress;
 
@@ -10,6 +10,8 @@ use App\WordPress\WordPress;
  */
 class Single
 {
+    use WordPress;
+
     protected $postId;
 
     public function __construct(int $postId)

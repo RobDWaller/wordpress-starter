@@ -1,5 +1,5 @@
 <?php
-use App\Theme\WordpressHelper;
+use App\Helper\WordpressHelper;
 
 $wordpress = new WordpressHelper;
 ?>

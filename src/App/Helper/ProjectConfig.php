@@ -1,5 +1,5 @@
 <?php
-namespace App\Theme;
+namespace App\Helper;
 
 use App\WordPress\WordPress;
 use App\WordPress\Acf;

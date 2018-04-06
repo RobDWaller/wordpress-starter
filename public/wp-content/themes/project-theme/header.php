@@ -1,7 +1,7 @@
 <?php
-use App\Theme\Page;
-use App\Theme\Render;
-use App\Theme\WordpressHelper;
+use App\Helper\Page;
+use App\Helper\Render;
+use App\Helper\WordpressHelper;
 
 $page = new Page;
 $render = new Render;
