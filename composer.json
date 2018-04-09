@@ -39,12 +39,8 @@
     },
     "autoload": {
         "psr-4": {
-            "Config\\": "src/Config/",
             "App\\": "src/App/",
-            "Exception\\": "src/Exception/",
-            "Theme\\Bootstrap\\": "src/Bootstrap/",
-            "Helper\\": "src/Helper/",
-            "Project\\Theme\\": "public/wp-content/themes/project-theme/App/Model/"
+            "Theme\\": "public/wp-content/themes/project-theme/Theme/"
         }
     }
 }

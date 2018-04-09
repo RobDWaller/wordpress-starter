@@ -1,5 +1,5 @@
 <?php
-use App\Theme\Render;
+use App\Helper\Render;
 
 $render = new Render;
 

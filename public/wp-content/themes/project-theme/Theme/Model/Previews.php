@@ -1,5 +1,5 @@
 <?php
-namespace Project\Theme;
+namespace Theme\Model;
 
 use App\WordPress\WordPress;
 use \WP_Query;
@@ -11,6 +11,8 @@ use \WP_Query;
  */
 class Previews
 {
+    use WordPress;
+
     protected $postType;
     protected $count;
     protected $additionalParams;

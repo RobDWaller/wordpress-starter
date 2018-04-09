@@ -1,6 +1,6 @@
 <?php
-use Project\Theme\Previews;
-use App\Theme\Render;
+use Theme\Model\Previews;
+use App\Helper\Render;
 
 $render = new Render;
 

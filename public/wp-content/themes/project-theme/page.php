@@ -1,6 +1,6 @@
 <?php
-use Project\Theme\Single;
-use App\Theme\Render;
+use Theme\Model\Single;
+use App\Helper\Render;
 
 $render = new Render;
 

@@ -1,11 +1,11 @@
 <?php
-use App\Theme\CustomPostType;
-use App\Theme\CustomTaxonomy;
-use App\Theme\Enqueues;
-use App\Theme\Reset;
-use App\Theme\DisableComments;
-use App\Theme\Utilities;
-use App\Theme\ProjectConfig;
+use App\Helper\CustomPostType;
+use App\Helper\CustomTaxonomy;
+use App\Helper\Enqueues;
+use App\Helper\Reset;
+use App\Helper\DisableComments;
+use App\Helper\Utilities;
+use App\Helper\ProjectConfig;
 
 //Reset Wordpress (removes redundant scripts etc.)
     add_action('init', 'resetWordpressDefaults');
