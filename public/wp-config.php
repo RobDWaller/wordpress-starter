@@ -26,7 +26,7 @@ require_once(__DIR__ . '/../vendor/autoload.php');
 
 /**
  * @author Rob Waller <rdwaller1984@googlemail.com>
- * Initiate .env class
+ * Initiate the DotEnv functionality for WordPress and define required variables.s
  */
 try {
     $dotenv = new Dotenv\Dotenv(__DIR__ . '/../');
@@ -138,6 +138,9 @@ define('WP_SITEURL', 'http' . (getenv("SSL") === 'true' ? 's' : '') . '://' . $_
 define('CONTENT_DIR', '/wp-content');
 define('WP_CONTENT_DIR', __DIR__ . CONTENT_DIR);
 define('WP_CONTENT_URL', WP_HOME . CONTENT_DIR);
+
+/* Set the default theme to the built in project-theme */
+define('WP_DEFAULT_THEME', 'project-theme');
 
 /* That's all, stop editing! Happy blogging. */
 

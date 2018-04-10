@@ -1,101 +1,67 @@
 # WordPress Starter Repo
 
-A simple Wordpress starter repo that makes use of Composer to install plugins, themes and vendor packages.
+A simple Wordpress starter repo that uses Composer to install WordPress, plugins, themes and vendor packages. The wp-config has been extended so that it is powered by [PHP DotEnv](https://packagist.org/packages/vlucas/phpdotenv) and makes use of .env files which are much better for deployments.
 
-In addition it makes use of vlucas/phpdotenv to help with system configuration via .env files.
+WordPress is pulled in from [JohnPBloch's](https://twitter.com/johnpbloch) WordPress [packagist project](https://packagist.org/packages/johnpbloch/wordpress) that reflects the latest release of WordPress.
 
-Thanks must go to Chris Sherry for his excellent tutorial on modern WordPress development.
+Thanks must go to [Chris Sherry](https://twitter.com/tweetingsherry) for his excellent tutorial on modern WordPress development that inspired this project two years ago. See Chris' talk from [PHP UK 17](https://www.youtube.com/watch?v=v57UWTXla3M) to learn more about this subject.
 
-See... [https://www.phpdorset.co.uk/talks/2015/march](https://www.phpdorset.co.uk/talks/2015/march)
+## System Requirements
 
+- PHP >= 7.0
+- Yarn (Node, NPM)
+- Composer
+- MySQL
 
 ## Installation
 
-Once you have pulled or cloned the git repo simply run the composer command in your CLI
+To install the WordPress starter run the following Composer command:
 
 ```
-composer update
+// For now just use dev-master while this project is in alpha
+
+composer create-project --prefer-dist rbdwllr/wordpress-starter test dev-master
+```
+
+If you download the project manually it will include some testing features such as Behat and Travis that may be of no interest to you and you may need to delete them.
+
+### DotEnv Setup
+
+After the `composer create-project` command is run your .env file will be created automatically based on the .env.example file. Also the relevant WordPress salts and keys will be appended to the end of the .env file via the [wordpress-salts-generator](https://packagist.org/packages/rbdwllr/wordpress-salts-generator) library.
+
+You will need to edit the .env file to match your specific environment in regards to database, etc.
+
+If you have installed this package manually rather than via Composer we advise that you just copy the .env.example file. Also you can append the required salts to the end of .env file using this following command:
+
+```
+vendor/bin/wpsalts dotenv --clean >> .env
+```
+
+### Yarn Setup
+
+This project makes use of [Yarn](https://yarnpkg.com/en/) rather than NPM directly, we find Yarn generally works better.
+
+To install the required dependencies run the following command:
+
+```
 yarn install
-
 ```
 
-Then copy the .env.example file to .env and configure the variables within...
-
-```
-cp .env.example .env
-```
-
-And configure it as you see fit.
-
-```
-vim .env
-```
-
-Then run the initial asset build
+Once Yarn has installed all the required dependencies you can build your JavaScript and SASS files by running the below command. Note you will need to run this command to get the base theme working.
 
 ```
 yarn run dev
 ```
 
+## Theme
 
+The WordPress starter project comes with a pre-built base theme stored in the `./public/wp-content/themes/project-theme` directory.
 
-## Front-end
+This theme is turned on by default in the `wp-config.php` file. See the constant `WP_DEFAULT_THEME`.
 
-### Watch
-To enable watching of assets and also css injections run `yarn run watch`. This will also enable Browser Sync. *Please note* when adding new scss modules, bear in mind you will need to save any other scss file (after you've created your new module) to ensure your new file is being watched and compiled.
+We have tightly coupled the theme to the project so that JavaScript and SASS files can be built at the root level as this makes site deployments far easier.
 
-### Cache Busting
-Every time the the Laravel Mix runs it creates a file in `public/wp-content` folder called `mix-manifest.json`. This file is used to determine the path of css and js file in the project. If you run `yarn run production` the Mix will add a unique hash id to css and js filename which enables cache busting. however this is not necessary in development so when `yarn run dev` is executed, the hash id is not added.
+## Authors
 
-### Code Splitting
-Bundling all JavaScript into a single files does come with a potential downside: each time you change a minor detail in your application code, you must bust the cache for all users. That means all of your vendor libraries must be re-downloaded and cached.
-One solution is to isolate, or extract, your vendor libraries into their own file.
-
-* Application Code: app.js
-* Vendor Libraries: vendor.js
-* Manifest (webpack Runtime): manifest.js
-
-In `webpack.mix.js` file located in the root directory of your project add:
-
-```
-mix.extract(['vue', 'axios']);
-```
-
-The extract method expects an array of vendor libraries that you wish to extract from your main bundle file. With this adjustment, the source code for both Vue and Axios will be located in `vendor.js` rather than `app.js`.
-
-### Hot Module Reloading
-
-Hot Module Replacement (or Hot Reloading) allows you to, not just refresh the page when a piece of JavaScript is changed, but it will also maintain the current state of the component in the browser. As an example, consider a simple counter component. When you press a button, the count goes up. Imagine that you click this button a number of times, and then update the component file. Once you do, the webpage will refresh to reflect your change, but the count will remain the same. It won't reset. This is also particularly useful when using Vue.js or React.js. To enable Hot Module Reloading you need to the following
-
-* In `.env` set `DEV_HOT_RELOADING` to `true`.
-* Open the terminal and type `yarn run hot`
-
-### Autoloading
-webpack offers the necessary facilities to make a module available as a variable in every other module required by webpack. If you're working with a particular plugin or library that depends upon a global variable, such as jQuery, ```mix.autoload()``` may prove useful to you.
-
-```
-mix.autoload({
-   jquery: ['$', 'window.jQuery']
-});
-```
-
-This snippet specifies that webpack should prepend var `$ = require('jquery')` to every location that it encounters either the global `$` identifier, or `window.jQuery`.
-
-
-### Example Functionality
-
-* To use the SVG Sprite:
-
-```
-<svg>
-  <use xlink:href='#shape-facebook'></use>
-</svg>
-```
-
-* To use a JS library, install via yarn. for example to install Vue.js run `yarn add vue` and yarn will add the following to package.json:
-
-```
-"dependencies": {
-  "vue": 2.1.1,
-}
-```
+- Rob Waller [@RobDWaller](https://twitter.com/RobDWaller)
+- Chris Boakes [GitHub](https://github.com/chrisboakes)

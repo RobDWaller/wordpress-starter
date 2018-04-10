@@ -42,5 +42,15 @@
             "App\\": "src/App/",
             "Theme\\": "public/wp-content/themes/project-theme/Theme/"
         }
+    },
+    "scripts": {
+        "post-root-package-install": [
+            "@php -r \"file_exists('.env') || copy('.env.example', '.env');\"",
+            "rm -rf features",
+            "rm .styleci.yml .travis.yml behat.yml phpstan.neon"
+        ],
+        "post-create-project-cmd": [
+            "vendor/bin/wpsalts dotenv --clean >> .env"
+        ]
     }
 }
